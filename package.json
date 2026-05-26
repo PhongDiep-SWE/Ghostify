@@ -1,0 +1,56 @@
+{
+  "name": "ghostify",
+  "version": "1.0.0",
+  "description": "Transparent floating note overlay for meetings",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5275 && NODE_ENV=development electronmon .\"",
+    "build": "vite build",
+    "package": "npm run build && electron-builder",
+    "package:win": "npm run build && electron-builder --win"
+  },
+  "keywords": [],
+  "author": "Phong Diep",
+  "license": "ISC",
+  "build": {
+    "appId": "com.ghostify.app",
+    "productName": "Ghostify",
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "icon": "build/icon.png"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ]
+  },
+  "dependencies": {
+    "docx": "^9.6.1",
+    "electron-store": "^8.2.0",
+    "framer-motion": "^12.39.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.14.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-textarea-autosize": "^8.5.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
+    "electron": "^41.5.0",
+    "electron-builder": "^26.8.1",
+    "electronmon": "^2.0.4",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19",
+    "vite": "^5.4.21",
+    "wait-on": "^7.2.0"
+  }
+}
