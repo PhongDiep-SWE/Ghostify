@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Fluid base font: ~12px at 560px wide → ~15px at 1100px wide */
+  font-size: clamp(12px, 0.85vw + 5.5px, 16px);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Theme tokens: Dark (default) ─────────────────── */
+:root {
+  --bg-app:              #09090C;
+  --bg-surface:          #111318;
+  --bg-modal:            #1C1D24;
+  --bg-overlay:          rgba(0, 0, 0, 0.55);
+  --bg-hover:            rgba(255, 255, 255, 0.04);
+  --bg-active:           rgba(255, 255, 255, 0.08);
+  --bg-input:            rgba(255, 255, 255, 0.04);
+
+  --bg-live:             rgba(9, 9, 12, 0.88);
+
+  --border:              rgba(255, 255, 255, 0.08);
+  --border-subtle:       rgba(255, 255, 255, 0.05);
+  --border-strong:       rgba(255, 255, 255, 0.20);
+
+  --text-primary:        rgba(255, 255, 255, 0.90);
+  --text-secondary:      rgba(255, 255, 255, 0.55);
+  --text-muted:          rgba(255, 255, 255, 0.35);
+  --text-faint:          rgba(255, 255, 255, 0.20);
+
+  --text-live-primary:   rgba(255, 255, 255, 0.90);
+
+  --folder-icon-active:  #7AB8F9;
+  --tab-pill-bg:         #FFFFFF;
+  --tab-pill-text:       #000000;
+  --kbd-bg:              rgba(255, 255, 255, 0.07);
+  --kbd-border:          rgba(255, 255, 255, 0.10);
+
+  --scrollbar:           rgba(255, 255, 255, 0.07);
+  --scrollbar-hover:     rgba(255, 255, 255, 0.14);
+}
+
+/* ── Theme tokens: Light (system preference) ──────── */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-app:              #E8E8EE;
+    --bg-surface:          #FFFFFF;
+    --bg-modal:            #FFFFFF;
+    --bg-overlay:          rgba(0, 0, 0, 0.25);
+    --bg-hover:            rgba(0, 0, 0, 0.04);
+    --bg-active:           rgba(0, 0, 0, 0.07);
+    --bg-input:            rgba(0, 0, 0, 0.04);
+
+    --bg-live:             rgba(255, 255, 255, 0.55);
+
+    --border:              rgba(0, 0, 0, 0.09);
+    --border-subtle:       rgba(0, 0, 0, 0.06);
+    --border-strong:       rgba(0, 0, 0, 0.20);
+
+    --text-primary:        rgba(0, 0, 0, 0.88);
+    --text-secondary:      rgba(0, 0, 0, 0.55);
+    --text-muted:          rgba(0, 0, 0, 0.38);
+    --text-faint:          rgba(0, 0, 0, 0.25);
+
+    --text-live-primary:   rgba(0, 0, 0, 0.92);
+
+    --folder-icon-active:  #3E8EF7;
+    --tab-pill-bg:         #1A1A1F;
+    --tab-pill-text:       #FFFFFF;
+    --kbd-bg:              rgba(0, 0, 0, 0.06);
+    --kbd-border:          rgba(0, 0, 0, 0.10);
+
+    --scrollbar:           rgba(0, 0, 0, 0.10);
+    --scrollbar-hover:     rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* ── Manual overrides (set by useTheme hook) ──────── */
+[data-theme="dark"] {
+  --bg-app:              #09090C;
+  --bg-surface:          #111318;
+  --bg-modal:            #1C1D24;
+  --bg-overlay:          rgba(0, 0, 0, 0.55);
+  --bg-hover:            rgba(255, 255, 255, 0.04);
+  --bg-active:           rgba(255, 255, 255, 0.08);
+  --bg-input:            rgba(255, 255, 255, 0.04);
+
+  --bg-live:             rgba(9, 9, 12, 0.88);
+
+  --border:              rgba(255, 255, 255, 0.08);
+  --border-subtle:       rgba(255, 255, 255, 0.05);
+  --border-strong:       rgba(255, 255, 255, 0.20);
+
+  --text-primary:        rgba(255, 255, 255, 0.90);
+  --text-secondary:      rgba(255, 255, 255, 0.55);
+  --text-muted:          rgba(255, 255, 255, 0.35);
+  --text-faint:          rgba(255, 255, 255, 0.20);
+
+  --text-live-primary:   rgba(255, 255, 255, 0.90);
+
+  --folder-icon-active:  #7AB8F9;
+  --tab-pill-bg:         #FFFFFF;
+  --tab-pill-text:       #000000;
+  --kbd-bg:              rgba(255, 255, 255, 0.07);
+  --kbd-border:          rgba(255, 255, 255, 0.10);
+
+  --scrollbar:           rgba(255, 255, 255, 0.07);
+  --scrollbar-hover:     rgba(255, 255, 255, 0.14);
+}
+
+[data-theme="light"] {
+  --bg-app:              #E8E8EE;
+  --bg-surface:          #FFFFFF;
+  --bg-modal:            #FFFFFF;
+  --bg-overlay:          rgba(0, 0, 0, 0.25);
+  --bg-hover:            rgba(0, 0, 0, 0.04);
+  --bg-active:           rgba(0, 0, 0, 0.07);
+  --bg-input:            rgba(0, 0, 0, 0.04);
+
+  --bg-live:             rgba(255, 255, 255, 0.55);
+
+  --border:              rgba(0, 0, 0, 0.09);
+  --border-subtle:       rgba(0, 0, 0, 0.06);
+  --border-strong:       rgba(0, 0, 0, 0.20);
+
+  --text-primary:        rgba(0, 0, 0, 0.88);
+  --text-secondary:      rgba(0, 0, 0, 0.55);
+  --text-muted:          rgba(0, 0, 0, 0.38);
+  --text-faint:          rgba(0, 0, 0, 0.25);
+
+  --text-live-primary:   rgba(0, 0, 0, 0.92);
+
+  --folder-icon-active:  #3E8EF7;
+  --tab-pill-bg:         #1A1A1F;
+  --tab-pill-text:       #FFFFFF;
+  --kbd-bg:              rgba(0, 0, 0, 0.06);
+  --kbd-border:          rgba(0, 0, 0, 0.10);
+
+  --scrollbar:           rgba(0, 0, 0, 0.10);
+  --scrollbar-hover:     rgba(0, 0, 0, 0.18);
+}
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+
+/* ── Keyframes ─────────────────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
