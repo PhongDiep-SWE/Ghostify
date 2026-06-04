@@ -15,7 +15,7 @@ A transparent, always-on-top note overlay for interviews and meetings. Ghostify 
 | Platform              | Link                                                                                                                    |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | macOS (Apple Silicon) | [Ghostify-1.0.0-arm64.dmg](https://github.com/PhongDiep-SWE/Ghostify/releases/download/v1.0.0/Ghostify-1.0.0-arm64.dmg) |
-| Windows               | [Ghostify-1.0.0.exe](https://github.com/PhongDiep-SWE/Ghostify/releases/download/v1.0.0/Ghostify-1.0.0.exe)             |
+| Windows               | [Ghostify.Setup.1.0.0.exe](https://github.com/PhongDiep-SWE/Ghostify/releases/download/v1.0.1/Ghostify.Setup.1.0.0.exe)             |
 
 ---
 
