@@ -27,8 +27,10 @@
       "icon": "build/icon.png"
     },
     "files": [
+      "package.json",
       "dist/**/*",
-      "electron/**/*"
+      "electron/**/*",
+      "build/**/*"
     ]
   },
   "dependencies": {
