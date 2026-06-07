@@ -12,10 +12,10 @@ A transparent, always-on-top note overlay for interviews and meetings. Ghostify 
 
 ## Download
 
-| Platform              | Link                                                                                                                    |
+| Platform               | Link                                                                                                                    |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | macOS (Apple Silicon) | [Ghostify-1.0.0-arm64.dmg](https://github.com/PhongDiep-SWE/Ghostify/releases/download/v1.0.0/Ghostify-1.0.0-arm64.dmg) |
-| Windows               | [Ghostify-1.0.0.exe](https://github.com/PhongDiep-SWE/Ghostify/releases/download/v1.0.0/Ghostify-1.0.0.exe)             |
+| Windows               | [Ghostify.Setup.1.0.0.exe](https://github.com/PhongDiep-SWE/Ghostify/releases/download/v1.0.1/Ghostify.Setup.1.0.0.exe)               |
 
 ---
 
@@ -27,3 +27,31 @@ A transparent, always-on-top note overlay for interviews and meetings. Ghostify 
 - Tailwind CSS
 - Framer Motion
 - electron-store
+
+---
+
+## Development & Building
+
+If you want to clone the repository and run or build the application locally, follow these steps.
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### 1. Setup
+Clone the repository and install the required dependencies:
+```bash
+git clone <this_repository_url>
+cd Ghostify
+npm install
+```
+
+### 2. Run Locally (Development)
+```bash
+npm run dev
+```
+
+### 3. Build Production Package For Windows
+The built assets will appear in the dist/ directory.
+```bash
+npm run package:win
+```
